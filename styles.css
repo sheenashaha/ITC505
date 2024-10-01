@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'QwitcherGrypen';
+    src: url('https://sheenashaha.github.io/ITC505/fonts/QwitcherGrypen-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'QwitcherGrypen', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 24px;
+}
+
+footer {
+    margin-top: 40px;
+}
