@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC 505 - Word Counter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ITC 505</h1>
+    </header>
+    <nav class="menu-sidebar">
+        <p>Navigation</p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h2>Word Counter Tool</h2>
+        <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+        <button id="countWords">Count Words</button>
+        <p id="wordCountResult"></p>
+    </main>
+    <aside class="advertisement">
+        <a href="https://www.amazon.com" target="_blank">
+            <img src="image1.jpg" alt="Advertisement">
+        </a>
+    </aside>
+    <footer>
+        <p>Created by Sheena Shaha - November 11, 2024</p>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

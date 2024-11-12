@@ -1,0 +1,98 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "menu content ad"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100vh; /* Ensures the page takes at least the full height of the viewport */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+header {
+    grid-area: header;
+    background-color: #2C3E50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.menu-sidebar {
+    grid-area: menu;
+    background-color: #ECF0F1;
+    padding: 15px;
+}
+
+.menu-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-sidebar li {
+    margin: 10px 0;
+}
+
+.menu-sidebar a {
+    text-decoration: none;
+    color: #2C3E50;
+}
+
+.menu-sidebar a:hover {
+    color: #3498DB;
+}
+
+.content {
+    grid-area: content;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensure the content area expands and adjusts */
+}
+
+.content textarea {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980B9;
+}
+
+.advertisement {
+    grid-area: ad;
+    text-align: center;
+}
+
+.advertisement img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    grid-area: footer;
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
