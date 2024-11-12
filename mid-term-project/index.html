@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lost City of Glass</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>The Lost City of Glass</h1>
+    </header>
+
+    <div class="story-section">
+        <img src="image1.jpg" alt="Sample Image" class="story-image" id="storyImage">
+        <p id="storyText">Welcome to the Lost City of Glass! Your journey begins here...</p>
+    </div>
+
+    <div class="options-container" id="optionsContainer"></div>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+        <p><strong>Substantive Addendum:</strong></p>
+        <p>
+            In this project, I built an interactive storytelling page using HTML, CSS, and JavaScript. The story is structured into different stages where users can make choices, and based on their selections, the story progresses to the next part. I used HTML to structure the page, including a header, story section, and buttons for user options. The CSS was chosen to keep the design clean and user-friendly, with a simple blue and white color scheme. The buttons are styled to match the overall theme and are made interactive with a hover effect. JavaScript is responsible for controlling the flow of the story. It dynamically updates the story text and options based on user interaction, making the experience more engaging. The "last modified" feature was added to the footer to provide users with information about when the page was last updated. This ensures the user knows if they are viewing the latest version. Overall, I aimed for a simple, engaging, and visually appealing experience that is easy to navigate, even for those with little technical background.
+        </p>
+    </footer>
+
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
