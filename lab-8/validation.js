@@ -1,10 +1,3 @@
-// Function to sanitize input to prevent XSS attacks
-function sanitizeInput(input) {
-    const div = document.createElement('div');
-    div.textContent = input;  // Set textContent, which automatically escapes HTML characters
-    return div.innerHTML;     // Return the sanitized HTML-safe string
-}
-
 function validateForm() {
     let isValid = true;
 
@@ -12,11 +5,18 @@ function validateForm() {
     document.querySelectorAll('.error-message').forEach(msg => msg.textContent = '');
 
     // Get form field values
-    const firstName = sanitizeInput(document.getElementById('firstName').value.trim());
-    const lastName = sanitizeInput(document.getElementById('lastName').value.trim());
-    const email = sanitizeInput(document.getElementById('email').value.trim());
-    const password = sanitizeInput(document.getElementById('password').value);
-    const confirmPassword = sanitizeInput(document.getElementById('confirmPassword').value);
+    let firstName = document.getElementById('firstName').value.trim();
+    let lastName = document.getElementById('lastName').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Sanitize inputs to prevent XSS
+    firstName = sanitizeInput(firstName);
+    lastName = sanitizeInput(lastName);
+    email = sanitizeInput(email);
+    password = sanitizeInput(password);
+    confirmPassword = sanitizeInput(confirmPassword);
 
     // Validate first name
     if (firstName === '') {
@@ -58,5 +58,22 @@ function validateForm() {
         isValid = false;
     }
 
+    // If the form is valid, show the submitted details in an alert
+    if (isValid) {
+        alert(`Submission Details:\n\nFirst Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}`);
+    }
+
     return isValid; // Prevent form submission if not valid
 }
+
+// Function to sanitize input by escaping special characters (XSS & SQLi prevention)
+function sanitizeInput(input) {
+    if (input) {
+        // Replace <, >, &, ', and " with HTML entities to prevent XSS
+        input = input.replace(/</g, "&lt;").replace(/>/g, "&gt;")
+                     .replace(/&/g, "&amp;").replace(/'/g, "&#x27;")
+                     .replace(/"/g, "&quot;");
+    }
+    return input;
+}
+
