@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Lights Out Challenge</h1>
+    <div id="game-board"></div>
+
+    <footer>
+        <p>Last updated: 
+            <span id="updateTime"></span>
+        </p>
+    </footer>
+
+    <!-- Addendum Section -->
+    <section id="addendum">
+        <h2>Addendum</h2>
+        <p>In designing this webpage, I chose a clean and minimalistic layout to keep the focus on the Lights Out Challenge game itself. By removing any unnecessary distractions, I wanted to create an environment where users could easily interact with the game. The page structure is straightforward, which helps with readability and maintainability. I also opted to keep the HTML simple by linking external files for styling (`styles.css`) and functionality (`app.js`), ensuring a modular approach to the design.</p>
+        <p>One important design decision was to include the dynamic update time in the footer. I used JavaScript to automatically fill in the last modified timestamp, providing the user with real-time information about when the page was last updated. This small feature adds a touch of interactivity and transparency. The game itself is powered by the `app.js` file, which holds all the necessary game logic, allowing the HTML to remain focused on structure and user experience, rather than combining both content and behavior in a single file.</p>
+    </section>
+    
+    <script>
+        document.getElementById('updateTime').textContent = document.lastModified;
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
